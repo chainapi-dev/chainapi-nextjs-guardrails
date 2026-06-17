@@ -1,0 +1,35 @@
+---
+description: Core stack definitions and strict AI behavioral constraints.
+globs: ["**/*"]
+alwaysApply: true
+---
+# Core Stack & AI Behavior
+
+ENFORCE STRICT LANGUAGE CONSTRAINTS.
+REQUIRE TypeScript for all web application logic. NEVER use vanilla JavaScript.
+REQUIRE Python 3.12+ for all data processing and backend scripting.
+REQUIRE strict type-checking ("strict": true in tsconfig, mypy --strict in Python).
+
+BAN AI CONVERSATIONAL EXPLANATIONS.
+NEVER output conversational filler ("Here is your code", "I hope this helps").
+OUTPUT ONLY raw executable code, configuration, or absolute architecture commands.
+STRIP all pleasantries, introductions, and conclusions from responses.
+
+## Anti-Patterns (NEVER do these)
+
+// Wrong: Missing type annotations — inferred as any
+const doSomething = (data) => { return data; };
+
+// Right: Explicit typed signature — compiler-enforced
+const doSomething = (data: UserPayload): ProcessedResult => transform(data);
+
+# Wrong: No type hints — mypy cannot analyze
+def process_data(data): pass
+
+# Right: mypy --strict compliant
+def process_data(data: list[UserRecord]) -> ProcessedResult: ...
+
+// Wrong: Strict mode disabled
+{ "noImplicitAny": false }
+// Right: Full strict mode enforced
+{ "strict": true }
