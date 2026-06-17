@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://chainapi.gumroad.com/l/chainapi-nextjs-guardrails">
-    <img src="https://img.shields.io/badge/Get%20Full%20Pack-%2447-6366f1?style=flat-square" alt="Get on Gumroad" />
+    <img src="https://img.shields.io/badge/Get%20Full%20Pack-%2419-6366f1?style=flat-square" alt="Get on Gumroad" />
   </a>
   <img src="https://img.shields.io/badge/Cursor%20Rules-17%20files-6366f1?style=flat-square" alt="17 rules" />
   <img src="https://img.shields.io/badge/TypeScript-strict-3178c6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
@@ -94,7 +94,7 @@ This pack encodes those constraints as Cursor `.mdc` behavioral rule files the A
 | `AGENTS.md` | Three-Tier Linux Foundation boundary model (Always Do / Ask First / Never Do). Sub-150 lines. Compatible with Claude Code, Codex, SWE-agent, and Devin. |
 | `CLAUDE.md` | WHAT-WHY-HOW project onboarding. Explicitly documents Claude Code's three-layer merging model (`~/.claude/CLAUDE.md` → `./CLAUDE.md` → `./CLAUDE.local.md`). |
 
-**[→ Get the full pack on Gumroad ($47)](https://chainapi.gumroad.com/l/chainapi-nextjs-guardrails)**
+**[→ Get the full pack on Gumroad ($19)](https://chainapi.gumroad.com/l/chainapi-nextjs-guardrails)**
 
 ---
 
