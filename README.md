@@ -1,5 +1,5 @@
 <p align="center">
-  <img src=".github/assets/logo.png" alt="ChainAPI" width="280" />
+  <img src=".github/logo.png" alt="ChainAPI" width="280" />
 </p>
 
 <h1 align="center">ChainAPI · Next.js &amp; React Anti-Debt Guardrails</h1>
