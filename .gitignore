@@ -1,0 +1,46 @@
+# ─── macOS ────────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ─── Windows ──────────────────────────────────────────────────────────────────
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ─── Node ─────────────────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.yarn/cache
+.yarn/unplugged
+
+# ─── Build artifacts ──────────────────────────────────────────────────────────
+dist/
+build/
+.next/
+out/
+.turbo/
+
+# ─── Environment — NEVER commit ───────────────────────────────────────────────
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ─── Editors ──────────────────────────────────────────────────────────────────
+.vscode/settings.json
+.vscode/launch.json
+.idea/
+*.swp
+*.swo
+*~
+
+# ─── Claude local overrides — NEVER commit ────────────────────────────────────
+# Layer 3 of Claude Code's three-layer merging model.
+# Used for personal API keys, local dev flags, machine-specific paths.
+# See CLAUDE.md for the full merging model explanation.
+CLAUDE.local.md
