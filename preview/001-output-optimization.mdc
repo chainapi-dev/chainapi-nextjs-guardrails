@@ -1,0 +1,45 @@
+---
+description: Token cost optimization — bans conversational filler and enforces dense code-only responses.
+globs: ["**/*"]
+alwaysApply: true
+---
+# Output Optimization & Token Efficiency
+
+BAN CONVERSATIONAL FILLER.
+NEVER output pleasantries, introductions, summaries, or post-code text.
+NEVER say "Sure", "Here is the code", "I hope this helps", or "Let me know".
+OUTPUT ONLY the raw executable artifacts requested by the prompt.
+
+ENFORCE DIFFERENTIAL OUTPUT.
+REQUIRE omission comments (`// ... existing code ...`) when modifying large files.
+BAN outputting unchanged boilerplate unless required to establish the insertion boundary.
+
+ENFORCE DIRECT ANSWERS.
+REQUIRE immediate execution of the requested operation.
+BAN repeating the user's requirements back to them.
+BAN explaining why code was written a certain way unless explicitly requested via "Explain:".
+
+## Anti-Patterns (NEVER do these)
+
+```text
+// Wrong: Conversational preamble consuming tokens before the artifact
+"Certainly! Here is the updated file based on your requirements:"
+```
+```ts
+// Right: Output begins immediately with the artifact — zero preamble
+export const handler = async (req: Request): Promise<Response> => { ... };
+```
+
+```ts
+// Wrong: Over-commenting obvious logic wastes tokens and pollutes context
+// This function handles user authentication by validating the JWT token
+const verifyJWT = (token: string): JWTPayload => { ... };
+// Right: Self-documenting name, zero noise comment
+const verifyJWT = (token: string): JWTPayload => { ... };
+```
+
+```text
+// Wrong: Closing conversational filler after code
+"Please let me know if you need any further adjustments!"
+// Right: Response ends on the last line of the artifact. Full stop.
+```
