@@ -1,0 +1,62 @@
+name: Rule Request / Enhancement
+description: Suggest a new anti-pattern, coverage gap fix, or improvement to an existing rule.
+title: "[Feature]: "
+labels: ["enhancement"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have an idea to make the guardrails stronger? Tell us about it.
+
+  - type: dropdown
+    id: request-type
+    attributes:
+      label: Request type
+      options:
+        - New anti-pattern for an existing rule file
+        - New rule file for an uncovered domain
+        - Improvement to an existing rule's directives
+        - Improvement to AGENTS.md boundary model
+        - Improvement to CLAUDE.md onboarding structure
+    validations:
+      required: true
+
+  - type: input
+    id: target-file
+    attributes:
+      label: Target file (if applicable)
+      placeholder: "300-api-contract-zod.mdc"
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What AI-generated debt pattern does this prevent?
+      placeholder: |
+        When using tRPC with the 300 rule active, AI still generates procedures
+        without .input() validation on mutation endpoints.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed anti-pattern (Wrong / Right format)
+      placeholder: |
+        // Wrong:
+        export const createPost = t.procedure.mutation(async ({ input }) => { ... });
+        // Right:
+        export const createPost = t.procedure
+          .input(CreatePostSchema)
+          .mutation(async ({ input }) => { ... });
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues and this is not a duplicate
+          required: true
+        - label: This is not a request to open-source the commercial rule files
+          required: true
