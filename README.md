@@ -2,7 +2,7 @@
   <img src=".github/assets/logo.png" alt="ChainAPI" width="280" />
 </p>
 
-<h1 align="center">ChainAPI Â· Next.js & React Anti-Debt Guardrails</h1>
+<h1 align="center">ChainAPI Next.js & React Anti-Debt Guardrails</h1>
 
 <p align="center">
   17 scope-controlled Cursor rules that stop AI from accumulating technical debt in your Next.js codebase.
